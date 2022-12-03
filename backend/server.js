@@ -2,6 +2,7 @@ import express from 'express'
 import colors from "colors"
 import dotenv from 'dotenv'
 import userRoutes from "./routes/userRoutes.js"
+import ticketRoutes from "./routes/ticketRoutes.js"
 import errorHandler from "./middleware/errorMiddleware.js"
 import connectDB from "./db/connect.js"
 
@@ -23,6 +24,7 @@ app.get('/',(req,res) => {
 
 //middleware
 app.use('/api/users', userRoutes)
+app.use('/api/tickets', ticketRoutes)
 
 //error handler middleware
 app.use(errorHandler)
